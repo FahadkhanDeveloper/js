@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic DOM</title>
+</head>
+<body>
+
+    <script>
+        function change() {
+       //    const news = document.getElementById("news");
+       //    news.innerText="Some new text in the div"
+       //    news.innerHTML="<strong>Some new Bold text </strong>"
+          const newElement = document.createElement("li");
+        //   const newText = document.createTextNode("item 1");
+        //   newElement.appendChild(newText)
+        //   document.getElementById("items").appendChild(newElement)
+        // or 
+        newElement.innerText = "Item 1"
+        document.getElementById("items").appendChild(newElement)
+
+   
+       }
+      </script>
+   
+     <div>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Odio, eius? Optio eos laudantium autem nobis sint quam corrupti iste ut doloremque, deleniti repellat. Necessitatibus voluptas eaque nobis rem perferendis voluptate.</div>
+
+     <div id="news"></div>
+     <ul id="items">
+
+     </ul>
+     <button onclick="change()">Click</button>
+
+    
+     
+</body>
+</html>

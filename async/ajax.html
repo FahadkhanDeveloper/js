@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using Ajax</title>
+</head>
+<body>
+    <button id="data" onclick="loadData()">Click</button>
+    <div id="data"></div>
+    <ul id="titles"></ul>
+    <script>
+        const loadData = function () {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if(this.readyState == 4 && this.status == 200) {
+                       const todos = JSON.parse(this.responseText);
+                    //    document.getElementById("data").innerHTML=todos;
+                    const titles = todos.map((todo) => {
+                        const li = document.createElement("li");
+                        // li.innerText = todo.title;
+                        // or
+                        li.textContent = todo.title;
+                        document.getElementById("titles").appendChild(li);
+                    })
+                    // console.log(titles)
+                }
+            }
+            xhr.open('GET','https://jsonplaceholder.typicode.com/todos',true)
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

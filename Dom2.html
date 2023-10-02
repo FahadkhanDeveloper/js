@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom 2</title>
+</head>
+<body>
+    <script>
+        // querySelector
+     function changeBtnText() {
+        // document.querySelector("#btn").style.color="red";
+        document.querySelector(".button").style.color="red";
+        document.getElementsByClassName("abc")[0].style.color="red"; // return array
+        document.querySelectorAll("#header h1")[1].innerHTML="<strong><h1>HEADING 1</h1></strong>"; 
+        //return array
+        document.getElementsByTagName("h1")[0].innerText="By tag name";  // return array
+     }
+    </script>
+    <button id="btn" class="button" onclick="changeBtnText()">Change</button>
+    <div class="abc"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, harum.</p></div>
+    <div class="abc"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, amet.</p></div>
+    <div id="header">
+        <h1>heading 1</h1>
+        <h1>Heading 2</h1>
+        <h1>Heading 3</h1>
+    </div>
+
+
+
+    
+</body>
+</html>

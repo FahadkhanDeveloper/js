@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video sir recommend</title>
+</head>
+<body>
+     <div>
+            <!-- <span>Hello</span>
+            <span style="display: none;">Bye</span> -->
+        <!-- ............ -->
+         <span id="hi" class="hi1 hi2">Hi</span>
+            <span id="bye" title="this is bye attr" data-test="this is a test" data-longer-name="hsjsdii">Bye</span>
+        </div>
+    
+        <script>
+        // append we only append text 
+            // appendChild we append elements like div h1 p
+            // const body = document.body;
+            // body.append("Hello World");
+            // const div = document.createElement("div");
+            // div.innerText = "Hello world"
+            // or
+            // div.textContent="Hello world 2"
+            // body.appendChild(div);
+            // 2nd method 
+            // const newElement = document.createElement("h1");
+            // const newText = document.createTextNode("This is H1");
+            // newElement.appendChild(newText);
+            // body.appendChild(newElement);
+            // const newDiv = document.querySelector("div");
+            // text content shows the html content while innerText shows content which are on the browser
+            // console.log(newDiv.textContent);
+            // console.log(newDiv.innerText);
+            // .........
+            // remove element
+            const div = document.querySelector("div")
+            const spanHi = document.querySelector("#hi")
+            const spanBye = document.querySelector("#bye");
+            spanBye.remove();
+            div.append(spanBye);
+            // div.removeChild(spanHi)
+            // getAttribute
+            console.log(spanBye.getAttribute("title"))
+            console.log(spanBye.getAttribute("id"))
+            // same as above 
+            console.log(spanBye.title);
+            console.log(spanBye.id);
+            // setAttribute
+            spanBye.setAttribute("title","hihihi")
+            spanBye.setAttribute("id","hellohello")
+
+            spanBye.title="hi2hi2";
+            spanBye.id="hello2hello2";
+            spanBye.removeAttribute("title");
+            console.log(spanBye.dataset);
+            console.log(spanBye.dataset.test)
+            console.log(spanBye.dataset.longerName)
+            spanBye.dataset.test="not text"
+            spanBye.dataset.newName="this new name";
+            spanHi.classList.add("new-class");
+            spanHi.classList.remove("hi1")
+            // in case of toggle if there is class it will removed and if class not avaible it will be added
+            spanHi.classList.toggle("hi5")
+            spanHi.style.color="red";
+            spanHi.style.backgroundColor="black";
+         </script>
+</body>
+</html>

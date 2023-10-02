@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local storage</title>
+</head>
+<body>
+       <script>
+        const person = {
+            id : 1,
+            name : "Abeeha",
+            age : 3,
+            address : "hangu"
+            // this file will be saved for 1 min
+            // expire: time() + 10000
+        }
+        const str = JSON.stringify(person);
+        // localStorage.setItem("name of the file",which string you want to save  means value);
+        localStorage.setItem("person",str);
+        // in inspect click on application and click on localStorage you will that string
+
+        // get this object from local storage and display it on console.
+        // in parameter give the name of the file in our we save file with the name of person
+        const obj = localStorage.getItem("person");
+        const json = JSON.parse(obj);
+        console.log(json);
+
+
+
+       </script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Handling</title>
+</head>
+<body>
+    <h2 id="head2">Heading 2</h2>
+     
+    <button onclick="onClick()">Click</button>
+    <img src="https://source.unsplash.com/random/200x200?sig=1" id="img1" alt="at1" width="100" height="100">
+    <!-- <p onmouseenter="mouseEnter()">Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, mollitia!</p> -->
+    <br><br>
+    <button onclick="elementFun()">click2</button>
+    <form>
+        <input type="text" onblur="clickOutsideF()" onfocus="clickInsideF()">
+    </form>
+
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis repudiandae praesentium quaerat voluptate aut? Iusto voluptates adipisci sit officia corporis deserunt. Facilis porro praesentium provident nulla? Veritatis excepturi asperiores illum.</p>
+    <p class="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis repudiandae praesentium quaerat voluptate aut? Iusto voluptates adipisci sit officia corporis deserunt. Facilis porro praesentium provident nulla? Veritatis excepturi asperiores illum.</p>
+
+    <form id="f1"> 
+        <label">User name</label>
+        <input type="text" name="username" id="username">
+        <label>Password</label>
+        <input type="password" name="password" id="password">
+    </form>
+    <p id="para1" style="color: red;" onclick="paraFun(this)">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt esse sit nam officiis praesentium culpa, omnis autem est fugit corrupti? Eligendi quas aspernatur enim voluptatem est. Inventore sunt ipsum dolorem.</p>
+    <p id="para2" style="color: red" onclick="paraFun(this)">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt esse sit nam officiis praesentium culpa, omnis autem est fugit corrupti? Eligendi quas aspernatur enim voluptatem est. Inventore sunt ipsum dolorem.</p>
+
+    <ul id="item">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    
+    <script>
+        // const listen = () => {
+        //     alert("you click the button")
+        // }
+        // const mouseEnter = () => {
+        //     alert("mouse is enter on p")
+        // }
+        // const inputListener = () => {
+        //     console.log("Key is pressed");
+        // }
+        const clickOutsideF = () => {
+            console.log("You click outside the input field")
+        }
+        const clickInsideF = () => {
+            console.log("you click inside the field")
+        }
+        // getElementByClassName return array
+        const para = document.getElementsByClassName("para");
+        para[0].style.color="red";
+
+    //   change attribute of the tag
+        const onClick = () => {
+           document.getElementById("img1").width="200";
+           document.getElementById("img1").height="200";
+           document.getElementById("img1").setAttribute("height","300");
+        //    get value of input field
+        //  [form id][input name or id ]
+           const name = document.forms["f1"]["username"].value;
+           const password = document.forms["f1"]["password"].value;
+           console.log(name, password);    
+        }
+        const paraFun = (para) => {
+            //   console.log(para);
+            if(para.id === "para1") {
+                console.log("para1");
+            }
+            else {
+                console.log('para2');
+            }
+            
+        }
+        function elementFun() {
+           const newElement = document.createElement("p");
+           newElement.id="p1"
+           const newText = document.createTextNode("This is paragraph");
+           newElement.appendChild(newText);
+           document.body.appendChild(newElement);
+        // const p = document.createElement("p");
+        // p.id="para3";
+        // p.innerHTML="this is para 3"
+        // document.body.appendChild(p);
+          const li = document.createElement("li");
+          li.innerHTML="new item";
+          document.getElementById("item").appendChild(li);
+          const h2 = document.getElementById("head2");
+          h2.setAttribute("class","headingNo2")
+
+        }
+        
+
+    </script>
+</body>
+</html>

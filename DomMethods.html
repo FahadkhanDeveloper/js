@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+    <!-- ............ -->
+     <span id="hi" class="hi1 hi2">Hi</span>
+        <span id="bye" title="this is bye attr" data-test="this is a test" data-longer-name="hsjsdii">Bye</span>
+    </div>
+ <script>
+    // remove element
+    const div = document.querySelector("div")
+    const spanHi = document.querySelector("#hi")
+    const spanBye = document.querySelector("#bye");
+    spanBye.remove();
+    div.append(spanBye);
+    // div.removeChild(spanHi)
+    // getAttribute
+    // console.log(spanBye.getAttribute("title"))
+    // console.log(spanBye.getAttribute("id"))
+    // same as above 
+    // console.log(spanBye.title);
+    // console.log(spanBye.id);
+    // setAttribute
+    // spanBye.setAttribute("title","hihihi")  //previous attr will be override
+    // spanBye.setAttribute("id","hellohello")
+
+    // spanBye.title="hi2hi2";
+    // spanBye.id="hello2hello2";
+    // spanBye.removeAttribute("title");
+    // console.log(spanBye.dataset);
+    // console.log(spanBye.dataset.test)
+    // console.log(spanBye.dataset.longerName)
+    // spanBye.dataset.test="not text"
+    // spanBye.dataset.newName="this new name";
+    spanHi.classList.add("new-class");
+    spanHi.classList.remove("hi1")
+    // in case of toggle if there is class it will removed and if class not avaible it will be added
+    spanHi.classList.toggle("hi5")
+    spanHi.style.color="red";
+    spanHi.style.backgroundColor="black";
+ </script>
+
+
+</body>
+</html>

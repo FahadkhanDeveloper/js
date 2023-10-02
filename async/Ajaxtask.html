@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Take title from api and set as li</title>
+</head>
+<body>
+    <button onclick="loadData()">Click</button>
+    <ul id="title">
+    </ul>
+    <button onclick="fetchAsync()">fetchAsync</button>
+    
+    <script>
+        const loadData = () => {
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+               if(this.readyState === 4 && this.status === 200) {
+                const todos = JSON.parse(this.responseText);
+                const titles = todos.map((todo) => {
+                    const li = document.createElement("li");
+                    li.textContent = todo.title;
+                    document.getElementById("title").appendChild(li);
+                })
+                
+               }
+            }
+            xhr.open("GET","https://jsonplaceholder.typicode.com/todos",true);
+            xhr.send();
+        }
+        //  fetch through  .then
+
+        // fetch("https://jsonplaceholder.typicode.com/todos")
+        // .then((res) => res.json())
+        // .then((json) => console.log(json))
+
+        // fetch through async await
+        // const run = async () => {
+        //     const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+        //     const json = await res.json();
+        //     console.log(json)
+        // }
+        // run();
+
+        const fetchAsync =async () => {
+            
+            const res = await fetch("https://jsonplaceholder.typicode.com/todos");
+            const json = await res.json();
+            console.log(json)
+        }
+
+
+
+    </script>
+</body>
+</html>
